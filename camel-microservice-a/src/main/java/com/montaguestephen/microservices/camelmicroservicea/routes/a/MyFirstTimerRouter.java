@@ -13,6 +13,8 @@ public class MyFirstTimerRouter extends RouteBuilder {
         // log it to the console
 
         // Created a timer endpoint below
-        from("timer:first-timer").to("log:first-timer");
+        from("timer:first-timer")
+                .transform().constant("My constant message")
+                .to("log:first-timer");
     }
 }
